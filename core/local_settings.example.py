@@ -18,15 +18,15 @@ DATABASES = {
 
 HOST = "http://localhost:8000"
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://default:VjuvgUz4sPeskPKB2lxWXpX6JAqUncVX@redis-19030.c9.us-east-1-4.ec2.cloud.redislabs.com:19030",
-        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
-        "KEY_PREFIX": "lenta",
-    },
-}
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://default:VjuvgUz4sPeskPKB2lxWXpX6JAqUncVX@redis-19030.c9.us-east-1-4.ec2.cloud.redislabs.com:19030",
+#         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
+#         "KEY_PREFIX": "lenta",
+#     },
+# }
+# SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 
 # # CELERY

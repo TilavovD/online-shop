@@ -20,7 +20,7 @@ class Product(BaseModel):
     content = RichTextUploadingField()
     image = models.ImageField(
         upload_to="product_image", editable=False, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
 
     in_stock = models.IntegerField(default=0)
 
@@ -44,7 +44,6 @@ class Product(BaseModel):
         self.save()
 
 
-
 class ProductImage(BaseModel):
     product = models.ForeignKey(
         Product, related_name="images", on_delete=models.CASCADE)
@@ -60,6 +59,7 @@ class Comment(BaseModel):
     rate = models.IntegerField(default=0)
     content = models.TextField()
 
+
 # SIGNAL
 # comment count, rate.
 
@@ -68,6 +68,7 @@ class Option(BaseModel):
     title = models.CharField(max_length=128)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="options")
     is_filter = models.BooleanField(default=False)
+
 
 class OptionValues(BaseModel):
     title = models.CharField(max_length=128)

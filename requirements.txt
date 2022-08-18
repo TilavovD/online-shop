@@ -1,5 +1,6 @@
-django
+django~=4.0.6
 django-ckeditor
 psycopg2
-unidecode
+unidecode~=1.3.4
 pillow
+djangorestframework~=3.13.1

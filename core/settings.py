@@ -31,7 +31,6 @@ HOST = 'localhost'
 # Application definition
 
 INSTALLED_APPS = [
-    "modeltranslation",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
 
     "debug_toolbar",
     'django_filters',
+    'paycomuz',
 
     'common',
     'product',
@@ -54,11 +54,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',    # This must be first on the list
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',    # This must be first on the list
+    # 'django.middleware.common.CommonMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -240,4 +239,14 @@ INTERNAL_IPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+
+PAYCOM_SETTINGS = {
+    "KASSA_ID": "KASSA ID",  # token
+    "TOKEN":"abcd",
+    "SECRET_KEY": "TEST KEY OR PRODUCTIN KEY",  # password
+    "ACCOUNTS": {
+        "KEY": "order_id"
+    }
 }
